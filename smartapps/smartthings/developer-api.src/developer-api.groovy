@@ -203,6 +203,13 @@ mappings {
             GET: "listDevices",
         ]
     }
+    
+    path("/devices/:id/events") {
+        action: [
+            GET: "listDeviceEvents"
+        ]
+    }
+    
     path("/devices/:id/commands") {
         action: [
             GET: "listDeviceCommands"
@@ -222,11 +229,6 @@ mappings {
         ]
     }
     
-    path("/devices/:id/events") {
-        action: [
-            GET: "listDeviceEvents"
-        ]
-    }
     // Routines
     path("/routines") {
         action: [
@@ -420,7 +422,7 @@ def listDevices() {
         deviceItem(device, true)
     } else {
         def result = []
-        result << allDevices.collect{deviceItem(it, false)}
+        result << allDevices.collect{deviceItem(it, true)}
         log.debug "Returning DEVICES: $result"
         result[0]
     }
