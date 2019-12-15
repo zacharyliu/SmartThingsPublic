@@ -125,7 +125,7 @@ def addDevice()
   if(!d) 
   {
   	log.debug "Hub: " + location.hubs[0].id
-    addChildDevice("samlalor", "LG Smart TV", dni, deviceSettings[2], 
+    addChildDevice("samlalor", "LG Smart TV 2012+", dni, deviceSettings[2], 
     	[
         	name: "LG Smart TV", 
             label: "", 
